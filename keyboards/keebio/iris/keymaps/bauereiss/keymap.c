@@ -6,6 +6,33 @@
 #define UK_TILD LSFT(KC_NUHS)
 #define UK_DQUO LSFT(KC_2)
 
+// Home block mods, base layer
+#define LA_S  LALT_T(KC_S)
+#define LS_D  LSFT_T(KC_D)
+#define LC_F  LCTL_T(KC_F)
+#define LG_V  LGUI_T(KC_V)
+
+#define LC_J  LCTL_T(KC_J)
+#define LS_K  LSFT_T(KC_K)
+#define LA_L  LALT_T(KC_L)
+#define LG_M  LGUI_T(KC_M)
+
+// Home block mods, num layer
+// (only on right hand side, we don't want modifiers on arrow keys)
+#define LC_P4 LCTL_T(KC_P4)
+#define LS_P5 LSFT_T(KC_P5)
+#define LA_P6 LALT_T(KC_P6)
+#define LG_P1 LGUI_T(KC_P1)
+
+// Mod-tap thumb keys
+#define L3_TAB  LT(3, KC_TAB)
+#define L2_ESC  LT(2, KC_ESC)
+#define L1_ENT  LT(1, KC_ENT)
+
+#define L1_SPC  LT(1, KC_SPC)
+#define L2_BSPC LT(2, KC_BSPC)
+#define L3_DEL  LT(3, KC_DEL)
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT(
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
@@ -13,11 +40,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
       KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                               KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_NUBS,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-      KC_ESC,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                               KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
+      KC_ESC,  KC_A,    LA_S,    LS_D,    LC_F,    KC_G,                               KC_H,    LC_J,    LS_K,    LA_L,    KC_SCLN, KC_QUOT,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-      KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_LALT,          KC_BSPC, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
+      KC_LSFT, KC_Z,    KC_X,    KC_C,    LG_V,    KC_B,    TG(1),            KC_RALT, KC_N,    LG_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                     KC_LGUI, TT(1),   LCTL_T(KC_ENT),            KC_SPC,  TT(2),   KC_RALT
+                                     L3_TAB,  L2_ESC,  L1_ENT,                    L1_SPC,  L2_BSPC, L3_DEL
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   ),
   [1] = LAYOUT(
@@ -26,11 +53,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
       KC_TRNS, KC_PGUP, KC_BSPC, KC_UP,   KC_DEL,  KC_PGDN,                            KC_NUHS, KC_P7,   KC_P8,   KC_P9,   KC_PPLS, KC_TRNS,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-      KC_TRNS, KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END,                             KC_PDOT, KC_P4,   KC_P5,   KC_P6,   KC_PENT, KC_TRNS,
+      KC_TRNS, KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END,                             KC_COMM, LC_P4,   LS_P5,   LA_P6,   KC_PENT, KC_TRNS,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-      KC_TRNS, KC_ESC,  KC_TAB,  KC_INS,  KC_ENT,  KC_UNDO, KC_LALT,          KC_LALT, KC_PCMM, KC_P1,   KC_P2,   KC_P3,   KC_PEQL, KC_TRNS,
+      KC_TRNS, KC_ESC,  KC_TAB,  KC_INS,  KC_ENT,  KC_UNDO, KC_TRNS,          KC_TRNS, KC_PDOT, LG_P1,   KC_P2,   KC_P3,   KC_PEQL, KC_TRNS,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                     KC_TRNS, KC_TRNS, KC_LCTL,                   KC_LCTL, MO(3),   KC_P0
+                                     KC_TRNS, KC_TRNS, KC_TRNS,                   KC_TRNS, KC_TRNS, KC_P0
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   ),
   [2] = LAYOUT(
@@ -43,7 +70,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
       KC_TRNS, KC_NUHS, KC_DLR,  UK_PIPE, UK_TILD, KC_GRV,  KC_TRNS,          KC_TRNS, KC_PLUS, KC_PERC, UK_DQUO, KC_QUOT, KC_SCLN, KC_TRNS,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                     KC_TRNS, MO(3),   KC_TRNS,                   KC_TRNS, KC_TRNS, KC_TRNS
+                                     KC_TRNS, KC_TRNS, KC_TRNS,                   KC_TRNS, KC_TRNS, KC_TRNS
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   ),
   [3] = LAYOUT(
