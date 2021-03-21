@@ -24,6 +24,13 @@
 #define LA_P6 LALT_T(KC_P6)
 #define LG_P1 LGUI_T(KC_P1)
 
+// Home block mods, media/mouse layer
+// (only on right hand side, so that we can have modifiers for mouse actions)
+#define LC_MPRV LCTL_T(KC_MPRV)
+#define LS_MPLY LSFT_T(KC_MPLY)
+#define LA_MNXT LALT_T(KC_MNXT)
+#define LG_VOLD LGUI_T(KC_VOLD)
+
 // Mod-tap thumb keys
 #define L3_TAB  LT(3, KC_TAB)
 #define L2_ESC  LT(2, KC_ESC)
@@ -75,15 +82,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [3] = LAYOUT(
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-      RESET,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS, KC_PSCR, KC_SLCK, KC_PAUS, KC_TRNS, KC_TRNS,
+      RESET,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_TRNS, KC_PSCR, KC_SLCK, KC_PAUS, RGB_MOD, RGB_TOG,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-      KC_TRNS, KC_TRNS, KC_TRNS, BL_STEP, BL_TOGG, KC_TRNS,                            KC_TRNS, KC_WBAK, KC_MSTP, KC_WFWD, KC_TRNS, KC_TRNS,
+      KC_TRNS, KC_TRNS, KC_WH_U, KC_MS_U, KC_WH_D, KC_TRNS,                            KC_TRNS, KC_WBAK, KC_MSTP, KC_WFWD, RGB_HUD, RGB_HUI,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-      KC_CAPS, RGB_HUI, RGB_SAI, RGB_VAI, RGB_TOG, KC_TRNS,                            KC_TRNS, KC_MPRV, KC_MPLY, KC_MNXT, KC_TRNS, KC_TRNS,
+      KC_CAPS, KC_WH_L, KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_R,                            KC_TRNS, LC_MPRV, LS_MPLY, LA_MNXT, RGB_SAD, RGB_SAI,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-      KC_TRNS, RGB_HUD, RGB_SAD, RGB_VAD, RGB_MOD, KC_TRNS, KC_TRNS,          KC_TRNS, KC_TRNS, KC_VOLD, KC_VOLU, KC_MUTE, KC_TRNS, KC_TRNS,
+      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_BTN3,          KC_TRNS, KC_TRNS, LG_VOLD, KC_VOLU, KC_MUTE, RGB_VAD, RGB_VAI,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                     KC_TRNS, KC_TRNS, KC_TRNS,                   KC_TRNS, KC_TRNS, KC_TRNS
+                                     KC_TRNS, KC_BTN2, KC_BTN1,                   KC_TRNS, KC_TRNS, KC_TRNS
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   )
 };
