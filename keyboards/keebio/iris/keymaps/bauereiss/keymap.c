@@ -51,7 +51,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                            KC_NLCK, KC_TAB,  KC_PSLS, KC_PAST, KC_PMNS, KC_TRNS,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-      KC_TRNS, KC_PGUP, KC_BSPC, KC_UP,   KC_DEL,  KC_PGDN,                            KC_NUHS, KC_P7,   KC_P8,   KC_P9,   KC_PPLS, KC_TRNS,
+      KC_TRNS, KC_BSPC, KC_PGUP, KC_UP,   KC_PGDN, KC_DEL,                             KC_NUHS, KC_P7,   KC_P8,   KC_P9,   KC_PPLS, KC_TRNS,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
       KC_TRNS, KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END,                             KC_COMM, LC_P4,   LS_P5,   LA_P6,   KC_PENT, KC_TRNS,
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
