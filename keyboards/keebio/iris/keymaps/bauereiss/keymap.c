@@ -95,3 +95,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   )
 };
 
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        // Slightly increase tapping term for thumb keys
+        case L3_TAB:
+        case L2_ESC:
+        case L1_ENT:
+        case L1_SPC:
+        case L2_BSPC:
+        case L3_DEL:
+            return TAPPING_TERM + 50;
+        default:
+            return TAPPING_TERM;
+    }
+}
